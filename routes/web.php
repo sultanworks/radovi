@@ -41,27 +41,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('content-pages/ckmedia', 'ContentPageController@storeCKEditorImages')->name('content-pages.storeCKEditorImages');
     Route::resource('content-pages', 'ContentPageController');
 
-    // Asset Categories
-    Route::delete('asset-categories/destroy', 'AssetCategoryController@massDestroy')->name('asset-categories.massDestroy');
-    Route::resource('asset-categories', 'AssetCategoryController');
-
-    // Asset Locations
-    Route::delete('asset-locations/destroy', 'AssetLocationController@massDestroy')->name('asset-locations.massDestroy');
-    Route::resource('asset-locations', 'AssetLocationController');
-
-    // Asset Statuses
-    Route::delete('asset-statuses/destroy', 'AssetStatusController@massDestroy')->name('asset-statuses.massDestroy');
-    Route::resource('asset-statuses', 'AssetStatusController');
-
-    // Assets
-    Route::delete('assets/destroy', 'AssetController@massDestroy')->name('assets.massDestroy');
-    Route::post('assets/media', 'AssetController@storeMedia')->name('assets.storeMedia');
-    Route::post('assets/ckmedia', 'AssetController@storeCKEditorImages')->name('assets.storeCKEditorImages');
-    Route::resource('assets', 'AssetController');
-
-    // Assets Histories
-    Route::resource('assets-histories', 'AssetsHistoryController', ['except' => ['create', 'store', 'edit', 'update', 'show', 'destroy']]);
-
     // Currencies
     Route::delete('currencies/destroy', 'CurrencyController@massDestroy')->name('currencies.massDestroy');
     Route::resource('currencies', 'CurrencyController');
